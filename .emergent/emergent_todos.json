@@ -1,34 +1,26 @@
 [
   {
-    "content": "Redesign palette: navy bg + magma orange/red lava accents",
+    "content": "Build Tilt wrapper + AnimatedHeading + CursorLava",
     "status": "completed"
   },
   {
-    "content": "Rewrite Hero: massive bleeding italic serif + lava rock visual + asymmetric layout",
+    "content": "Hero: mouse-parallax rocks + letter-stagger title reveal + 3D depth",
     "status": "completed"
   },
   {
-    "content": "Add BigSerifMarquee bands with huge italic serif words",
+    "content": "Service rows: magnetic 3D tilt + big number scaling on hover",
     "status": "completed"
   },
   {
-    "content": "Convert all section headers to magma editorial serif treatment",
+    "content": "Mentor 3D orb + Marquee hover scale/pause",
     "status": "completed"
   },
   {
-    "content": "Restyle services as big-number editorial list (01/02/03)",
+    "content": "Convictions/Problem/Testimonials 3D tilt cards",
     "status": "completed"
   },
   {
-    "content": "Restyle Mentor/Testimonials/FAQ to match magma editorial style",
-    "status": "completed"
-  },
-  {
-    "content": "Add bottom ghost echo + magma-style Footer + form section",
-    "status": "completed"
-  },
-  {
-    "content": "Screenshot, polish, finalize",
+    "content": "Test compile & screenshot final result",
     "status": "completed"
   }
 ]

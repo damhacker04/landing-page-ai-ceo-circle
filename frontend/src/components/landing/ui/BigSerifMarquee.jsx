@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 /**
- * BigSerifMarquee — magma-style massive italic serif marquee band.
- * Words flow horizontally with a tilde-style separator.
+ * BigSerifMarquee — massive italic serif marquee that speeds-up on hover and
+ * scales the active word.  Pure CSS animation is paused/resumed via hover.
  */
 const BigSerifMarquee = ({
   words = [],
   separator = "—",
   speed = "normal",
-  size = "normal", // normal | xl | xxl
+  size = "normal",
   reverse = false,
   className = "",
 }) => {
@@ -26,14 +26,16 @@ const BigSerifMarquee = ({
       : "text-[10vw] sm:text-[8vw] md:text-[6.5vw] lg:text-[5vw]";
 
   const row = (
-    <div className={`flex shrink-0 items-center gap-12 pr-12 ${cls}`}>
+    <div className={`group/marquee flex shrink-0 items-center gap-12 pr-12 ${cls} hover:[animation-play-state:paused]`}>
       {words.map((w, i) => (
         <span key={i} className="flex shrink-0 items-center gap-12">
-          <span
-            className={`font-serif-italic whitespace-nowrap ${fontCls} leading-[0.9] text-cream`}
+          <motion.span
+            whileHover={{ scale: 1.08, color: "#ffae7a" }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className={`font-serif-italic whitespace-nowrap ${fontCls} leading-[0.9] text-cream transition-colors cursor-default`}
           >
             {w}
-          </span>
+          </motion.span>
           <span className="font-serif-italic text-[#ff5d2a]/70 text-6xl md:text-7xl lg:text-8xl">
             {separator}
           </span>
@@ -48,7 +50,6 @@ const BigSerifMarquee = ({
         {row}
         {row}
       </div>
-      {/* edge fades */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#070e1c] to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#070e1c] to-transparent" />
     </div>

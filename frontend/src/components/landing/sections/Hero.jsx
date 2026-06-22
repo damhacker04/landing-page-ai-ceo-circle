@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import MagneticButton from "@/components/landing/ui/MagneticButton";
 import LavaRockBackdrop from "@/components/landing/ui/LavaRockBackdrop";
+import AnimatedHeading from "@/components/landing/ui/AnimatedHeading";
 import { HERO } from "@/components/landing/data";
 
 const Hero = () => {
@@ -29,27 +30,48 @@ const Hero = () => {
         </motion.div>
       </Container>
 
-      {/* Massive bleeding headline */}
+      {/* Massive bleeding headline with letter-stagger reveal */}
       <Container className="relative z-10 mt-10 md:mt-14">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="display-xxl text-balance text-cream"
-        >
-          <span className="block text-[14vw] leading-[0.9] sm:text-[12vw] md:text-[10.5vw] lg:text-[9.5vw]">
-            <span className="text-gradient-cream">Lead the AI era.</span>
-          </span>
-          <span className="font-serif-italic block text-[16vw] leading-[0.92] tracking-[-0.04em] sm:text-[13vw] md:text-[11.5vw] lg:text-[10.5vw] text-glow-lava">
-            <span className="text-gradient-lava">Don’t just survive it.</span>
-          </span>
-        </motion.h1>
+        <AnimatedHeading
+          as="h1"
+          className="hero-display text-balance text-cream"
+          parts={[
+            {
+              text: HERO.titleA,
+              block: true,
+              gradient: "cream",
+            },
+            {
+              text: HERO.titleB,
+              block: true,
+              italic: true,
+              gradient: "lava",
+            },
+          ]}
+        />
+        <style>{`
+          .hero-display { font-family: 'Instrument Serif', serif; }
+          .hero-display h1 { display: block; }
+          .hero-display h1 > span {
+            display: block;
+            line-height: 0.94;
+            letter-spacing: -0.035em;
+          }
+          .hero-display h1 > span:first-child {
+            font-size: clamp(56px, 10vw, 168px);
+          }
+          .hero-display h1 > span:last-child {
+            font-size: clamp(64px, 11.2vw, 188px);
+            letter-spacing: -0.04em;
+            text-shadow: 0 0 30px rgba(255,95,38,0.35), 0 0 60px rgba(255,70,20,0.18);
+            margin-top: -0.04em;
+          }
+        `}</style>
       </Container>
 
-      {/* Asymmetric bottom: scroll hint left, description right */}
+      {/* Asymmetric bottom */}
       <Container className="relative z-10 mt-14 md:mt-24">
         <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-12">
-          {/* Scroll hint */}
           <motion.a
             href="#convictions"
             initial={{ opacity: 0 }}
@@ -57,32 +79,31 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="group inline-flex items-center gap-2.5 font-mono text-[10.5px] uppercase tracking-[0.32em] text-cream-dim transition-colors hover:text-cream md:col-span-5"
           >
-            <span className="grid h-9 w-9 place-items-center rounded-full border-hair border-cream-15 transition-colors group-hover:border-[#ff5d2a]/60">
-              <ArrowRight className="h-3.5 w-3.5 rotate-90" />
-            </span>
+            <motion.span
+              whileHover={{ scale: 1.1, rotate: 90 }}
+              transition={{ type: "spring", stiffness: 250, damping: 18 }}
+              className="grid h-10 w-10 place-items-center rounded-full border-hair border-cream-15 transition-colors group-hover:border-[#ff5d2a] group-hover:bg-[#ff5d2a]/10"
+            >
+              <ArrowRight className="h-3.5 w-3.5 rotate-90 group-hover:text-lava" />
+            </motion.span>
             Scroll to dig
             <span className="font-serif-italic text-base text-cream/60">— 1</span>
           </motion.a>
 
-          {/* Description + CTA on right */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="md:col-span-7 md:pl-12"
           >
             <p className="max-w-xl text-[15px] leading-[1.55] text-cream-soft md:text-[16.5px]">
               {(() => {
                 const parts = HERO.description.split("—");
-                if (parts.length < 2) {
-                  return <span className="text-cream">{HERO.description}</span>;
-                }
+                if (parts.length < 2) return <span className="text-cream">{HERO.description}</span>;
                 return (
                   <>
                     <strong className="font-medium text-cream">{parts[0].trim()}</strong>
-                    <span className="text-cream-dim">
-                      {" — " + parts.slice(1).join("—").trim()}
-                    </span>
+                    <span className="text-cream-dim">{" — " + parts.slice(1).join("—").trim()}</span>
                   </>
                 );
               })()}
@@ -104,7 +125,6 @@ const Hero = () => {
         </div>
       </Container>
 
-      {/* Bottom hairline + cohort meta */}
       <Container className="relative z-10 mt-24 md:mt-28">
         <div className="hairline" />
         <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">

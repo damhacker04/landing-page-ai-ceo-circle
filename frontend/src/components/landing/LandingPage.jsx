@@ -14,10 +14,12 @@ import Aftermath from "@/components/landing/sections/Aftermath";
 import Faq from "@/components/landing/sections/Faq";
 import FinalCta from "@/components/landing/sections/FinalCta";
 import Footer from "@/components/landing/sections/Footer";
+import CursorLava from "@/components/landing/ui/CursorLava";
 
 const LandingPage = () => {
   return (
     <main className="relative min-h-screen">
+      <CursorLava />
       <Navbar />
       <Hero />
       <PoweredBy />
