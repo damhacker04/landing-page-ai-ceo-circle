@@ -1,0 +1,38 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+/* Gradient text for select headlines */
+.text-gradient-gold {
+  background: linear-gradient(180deg, #f5e6b2 0%, #d4a017 60%, #7a5a0a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-white {
+  background: linear-gradient(180deg, #ffffff 0%, #c4c4c4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+}
+
+/* Inner card highlight (subtle top-light gloss) */
+.gloss-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 30%);
+  opacity: 0.6;
+}

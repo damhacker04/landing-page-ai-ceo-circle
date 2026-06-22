@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Set up global styles, fonts (Inter + Instrument Serif), noise, custom utilities",
+    "status": "completed"
+  },
+  {
+    "content": "Build shared UI primitives (GlowCard, Marquee, Reveal, MagneticButton, Container, SectionLabel)",
+    "status": "completed"
+  },
+  {
+    "content": "Build all sections (Nav, Hero w/ animated bg, PoweredBy marquee, Stats, Ecosystem, Problem, Program, Timeline, Testimonials, Qualification, Mentor, Aftermath, FAQ, FinalCTA, Footer)",
+    "status": "completed"
+  },
+  {
+    "content": "Patch craco dev-server (v5 incompatibility with react-scripts 5)",
+    "status": "completed"
+  },
+  {
+    "content": "Wire into App.js, test compile, screenshot & polish",
+    "status": "completed"
+  }
+]

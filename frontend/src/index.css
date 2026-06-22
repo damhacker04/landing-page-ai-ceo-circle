@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(201, 146, 10, 0.18), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 100% 30%, rgba(13, 27, 42, 0.55), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 0% 70%, rgba(201, 146, 10, 0.06), transparent 70%),
+    #050505;
+  background-attachment: fixed;
+}
+
+/* Subtle film grain layered globally */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='1'/></svg>");
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 39 89% 41%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 39 89% 41%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+  }
+  ::selection {
+    background: rgba(201, 146, 10, 0.35);
+    color: #fff;
+  }
+}
+
+/* Reusable utilities */
+@layer utilities {
+  .font-serif-italic {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .text-gold {
+    color: #d4a017;
+  }
+  .text-gold-soft {
+    color: #b8861a;
+  }
+  .border-hair {
+    border-width: 0.5px;
+  }
+  .bg-glass {
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+}
+
+/* Gold pulse for timeline node */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.55), 0 0 24px 4px rgba(212, 160, 23, 0.15); }
+  50%      { box-shadow: 0 0 0 8px rgba(212, 160, 23, 0), 0 0 36px 8px rgba(212, 160, 23, 0.25); }
+}
+.animate-gold-pulse {
+  animation: goldPulse 2.6s ease-in-out infinite;
+}
+
+/* Slow rotation for hero orbit */
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spinSlow 60s linear infinite; }
+.animate-spin-slower { animation: spinSlow 120s linear infinite reverse; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #2a2a2a; }
+
+@layer base {
+  [data-debug-wrapper="true"] { display: contents !important; }
+}
