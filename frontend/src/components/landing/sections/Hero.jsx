@@ -43,7 +43,7 @@ const Hero = () => {
           ]}
         />
         <style>{`
-          .hero-display { font-family: 'Instrument Serif', serif; }
+          .hero-display { font-family: var(--font-instrument-serif), 'Instrument Serif', serif; }
           .hero-display h1 { display: block; }
           .hero-display h1 > span { display: block; line-height: 0.92; letter-spacing: -0.045em; }
           .hero-display h1 > span:first-child { font-size: clamp(56px, 10.5vw, 184px); }

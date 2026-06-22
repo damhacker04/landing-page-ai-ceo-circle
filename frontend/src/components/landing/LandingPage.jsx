@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Navbar from "@/components/landing/sections/Navbar";
 import Hero from "@/components/landing/sections/Hero";

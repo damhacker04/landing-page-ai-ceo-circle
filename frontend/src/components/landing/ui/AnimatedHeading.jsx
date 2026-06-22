@@ -24,23 +24,52 @@ const child = {
   },
 };
 
-const AnimatedWord = ({ word, italic, gradient, baseDelay = 0 }) => {
+const AnimatedWord = ({ word, italic, gradient }) => {
   const letters = Array.from(word);
+
+  // Gradient on the outer word span — no overflow:hidden here so background-clip:text works.
+  // overflow:hidden moved to per-letter wrappers for the curtain animation.
+  // paddingBottom + negative marginBottom gives room for italic descenders (j, g, y…).
+  const gradientStyle =
+    gradient === "lava"
+      ? {
+          background: "linear-gradient(180deg, #f6dfb5 0%, #ff7a3d 55%, #d63a0a 100%)",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          color: "transparent",
+        }
+      : gradient === "cream"
+      ? {
+          background: "linear-gradient(180deg, #ffffff 0%, #f5e8cc 60%, #c9b890 100%)",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          color: "transparent",
+        }
+      : {};
+
   return (
-    <span className="inline-flex overflow-hidden" style={{ verticalAlign: "baseline" }}>
+    <span
+      className={italic ? "font-serif-italic" : ""}
+      style={{ display: "inline-flex", verticalAlign: "baseline", ...gradientStyle }}
+    >
       {letters.map((ch, i) => (
-        <motion.span
+        <span
           key={i}
-          variants={child}
-          style={{ display: "inline-block", transformOrigin: "bottom" }}
-          className={[
-            italic ? "font-serif-italic" : "",
-            gradient === "lava" ? "text-gradient-lava" : "",
-            gradient === "cream" ? "text-gradient-cream" : "",
-          ].join(" ")}
+          style={{
+            display: "inline-block",
+            overflow: "hidden",
+            verticalAlign: "top",
+            paddingBottom: "0.22em",
+            marginBottom: "-0.22em",
+          }}
         >
-          {ch}
-        </motion.span>
+          <motion.span
+            variants={child}
+            style={{ display: "inline-block", transformOrigin: "bottom" }}
+          >
+            {ch}
+          </motion.span>
+        </span>
       ))}
     </span>
   );
