@@ -13,7 +13,7 @@ const QualItem = ({ num, text, accent }) => (
   <motion.li
     whileHover={{ x: 5 }}
     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-    className="flex items-start gap-5 border-t border-hair border-cream-10 pt-5 first:border-t-0 first:pt-0 cursor-default"
+    className="flex items-start gap-5 border-t border-t-[0.5px] border-cream-10 pt-5 first:border-t-0 first:pt-0 cursor-default"
   >
     <motion.span
       whileHover={{ color: accent ? "#ff7a3d" : "#efe7d6" }}

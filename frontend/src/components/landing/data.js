@@ -166,6 +166,8 @@ export const TESTIMONIALS = {
   items: [
     {
       initials: "RS",
+      // TODO: replace with Reza's actual photo
+      photo: "https://i.pravatar.cc/80?img=52",
       name: "Reza S.",
       role: "CEO, Manufacturing · Jakarta",
       quote:
@@ -173,6 +175,8 @@ export const TESTIMONIALS = {
     },
     {
       initials: "AT",
+      // TODO: replace with Andrea's actual photo
+      photo: "https://i.pravatar.cc/80?img=44",
       name: "Andrea T.",
       role: "Founder, FinTech · Singapore",
       quote:
@@ -180,6 +184,8 @@ export const TESTIMONIALS = {
     },
     {
       initials: "DW",
+      // TODO: replace with Dian's actual photo
+      photo: "https://i.pravatar.cc/80?img=21",
       name: "Dian W.",
       role: "President Director, Retail · Surabaya",
       quote:
@@ -212,6 +218,7 @@ export const MENTOR = {
   title: "Mentored by a practitioner who has done it",
   lead: {
     initials: "IM",
+    // TODO: replace with Isaac Munandar's actual headshot (square/portrait, min 400x400)
     name: "Isaac Munandar",
     role: "Co-Founder & CEO — MAXY AI",
     handle: "@isaacmunandar.ai",
@@ -225,6 +232,7 @@ export const MENTOR = {
     ],
   },
   team: [
+    // TODO: replace with actual team headshots (square, min 96x96)
     { initials: "AT", name: "Andy Toro", role: "Co-Founder & CTO — International tech architecture and AI systems" },
     { initials: "IK", name: "Ika", role: "Operations Director — Program delivery and logistics" },
     { initials: "SF", name: "Stefen", role: "Product Manager — Platform, tools, and program infrastructure" },
@@ -236,6 +244,8 @@ export const AFTERMATH = {
   title: "AI CEO Circle is the beginning, not the end",
   intro:
     "Graduates unlock access to MAXY AI's full enterprise transformation ecosystem.",
+  // TODO: replace with actual event/program photo (landscape, min 1200x500)
+  eventPhoto: "https://picsum.photos/seed/executive-ai-program-session/1200/500",
   steps: [
     {
       tag: "Step 2",

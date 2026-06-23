@@ -8,11 +8,11 @@ import { FAQ } from "@/components/landing/data";
 
 const FaqItem = ({ item, isOpen, onToggle, index }) => {
   return (
-    <div className="group border-b border-hair border-cream-10 last:border-b-0">
+    <div className="group border-b border-b-[0.5px] border-cream-10 last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-start justify-between gap-6 py-8 text-left transition-colors"
+        className="flex w-full items-start justify-between gap-6 py-8 px-5 md:px-8 text-left transition-colors"
         aria-expanded={isOpen}
       >
         <div className="flex items-start gap-7">
@@ -48,7 +48,7 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-8 pl-[60px] pr-14 text-[15px] leading-relaxed text-cream-soft">
+            <div className="pb-8 pl-[80px] pr-[72px] text-[15px] leading-relaxed text-cream-soft md:pl-[92px] md:pr-[88px]">
               {item.a}
             </div>
           </motion.div>
@@ -90,7 +90,7 @@ const Faq = () => {
         </div>
 
         <Reveal delay={0.12}>
-          <div className="mt-14 border-t border-hair border-cream-10">
+          <div className="mt-14 border-t border-t-[0.5px] border-cream-10">
             {FAQ.items.map((it, i) => (
               <FaqItem
                 key={i}

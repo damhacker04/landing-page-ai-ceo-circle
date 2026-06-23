@@ -169,7 +169,7 @@ code { font-family: var(--font-jetbrains-mono), monospace; }
 
   /* Ghost stroked text (outline-only) used for hero echo */
   .text-stroke {
-    -webkit-text-stroke: 1px rgba(239, 231, 214, 0.14);
+    -webkit-text-stroke: 1.5px rgba(239, 231, 214, 0.32);
     color: transparent;
   }
 

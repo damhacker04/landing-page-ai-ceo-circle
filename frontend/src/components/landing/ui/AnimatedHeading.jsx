@@ -56,7 +56,14 @@ const AnimatedWord = ({ word, italic, gradient }) => {
       style={{
         display: "inline-flex",
         verticalAlign: "baseline",
-        clipPath: "inset(0 -0.05em -0.4em -0.05em)",
+        // Italic serif at large display sizes lean past the word box edges.
+        // Extend the clip region generously on all sides; extra bottom covers descenders.
+        clipPath: italic
+          ? "inset(-0.06em -0.2em -0.5em -0.2em)"
+          : "inset(0 -0.08em -0.4em -0.08em)",
+        // paddingBottom extends the background-paintable area so background-clip:text
+        // covers descender glyphs (j, g, y…) that sit below the tight 0.92 line box.
+        paddingBottom: italic ? "0.18em" : 0,
         ...gradientStyle,
       }}
     >

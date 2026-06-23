@@ -29,6 +29,18 @@ const Aftermath = () => {
           </Reveal>
         </div>
 
+        {AFTERMATH.eventPhoto && (
+          <div className="mt-14 overflow-hidden rounded-2xl border border-hair border-cream-10">
+            {/* TODO: replace with actual event/program photo */}
+            <img
+              src={AFTERMATH.eventPhoto}
+              alt="AI CEO Circle program session"
+              className="h-[220px] w-full object-cover md:h-[380px]"
+              style={{ filter: "saturate(0.65) brightness(0.7)" }}
+            />
+          </div>
+        )}
+
         <div className="mt-14 flex flex-col">
           {AFTERMATH.steps.map((s, i) => (
             <Reveal key={i} delay={i * 0.08}>

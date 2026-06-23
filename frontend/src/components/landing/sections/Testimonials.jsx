@@ -55,14 +55,24 @@ const Testimonials = () => {
                     >
                       {t.quote}
                     </p>
-                    <div className="mt-auto flex items-center gap-3 border-t border-hair border-cream-10 pt-6">
-                      <motion.div
-                        whileHover={{ scale: 1.12, rotate: -8 }}
-                        transition={{ type: "spring", stiffness: 280, damping: 18 }}
-                        className="grid h-10 w-10 place-items-center rounded-full border-hair border-cream-15 bg-[rgba(201,146,10,0.08)] font-mono text-[11px] tracking-wider text-[#C9920A]"
-                      >
-                        {t.initials}
-                      </motion.div>
+                    <div className="mt-auto flex items-center gap-3 border-t border-t-[0.5px] border-cream-10 pt-6">
+                      {t.photo ? (
+                        <motion.img
+                          src={t.photo}
+                          alt={t.name}
+                          whileHover={{ scale: 1.12, rotate: -8 }}
+                          transition={{ type: "spring", stiffness: 280, damping: 18 }}
+                          className="h-10 w-10 shrink-0 rounded-full object-cover"
+                        />
+                      ) : (
+                        <motion.div
+                          whileHover={{ scale: 1.12, rotate: -8 }}
+                          transition={{ type: "spring", stiffness: 280, damping: 18 }}
+                          className="grid h-10 w-10 shrink-0 rounded-full place-items-center bg-[rgba(201,146,10,0.08)] font-mono text-[11px] tracking-wider text-[#C9920A]"
+                        >
+                          {t.initials}
+                        </motion.div>
+                      )}
                       <div className="flex flex-col">
                         <span className="text-[13.5px] font-medium text-cream">{t.name}</span>
                         <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">

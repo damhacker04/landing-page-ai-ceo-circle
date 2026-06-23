@@ -6,7 +6,7 @@ import Reveal from "@/components/landing/ui/Reveal";
 import { MENTOR } from "@/components/landing/data";
 import { AtSign } from "lucide-react";
 
-const MentorOrb = ({ initials }) => {
+const MentorOrb = ({ initials, photo }) => {
   const mx = useMotionValue(0.5);
   const my = useMotionValue(0.5);
   const sx = useSpring(mx, { stiffness: 160, damping: 22 });
@@ -44,34 +44,27 @@ const MentorOrb = ({ initials }) => {
         transition={{ type: "spring", stiffness: 200, damping: 22 }}
         className="relative grid h-full w-full place-items-center overflow-hidden rounded-full border-hair border-cream-15"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_#ffcb9a,_#ff7a3d_45%,_#9a2b08_82%,_#1c0a02)]" />
-        <svg className="absolute inset-0 h-full w-full opacity-90" viewBox="0 0 100 100">
-          <defs>
-            <filter id="orbCracks">
-              <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="7" />
-              <feDisplacementMap in="SourceGraphic" scale="3" />
-            </filter>
-          </defs>
-          <g style={{ filter: "url(#orbCracks)" }}>
-            <path d="M 20 35 Q 40 50 60 40 Q 80 30 90 55" stroke="#ffd6a5" strokeWidth="0.8" fill="none" opacity="0.85" />
-            <path d="M 15 60 Q 30 70 55 65 Q 75 60 95 70" stroke="#ff5d2a" strokeWidth="0.7" fill="none" opacity="0.8" />
-            <path d="M 10 80 Q 35 85 60 80" stroke="#ffb16a" strokeWidth="0.6" fill="none" opacity="0.7" />
-          </g>
-        </svg>
+        {photo ? (
+          <img src={photo} alt={initials} className="absolute inset-0 h-full w-full object-cover" />
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_#ffcb9a,_#ff7a3d_45%,_#9a2b08_82%,_#1c0a02)]" />
+        )}
         <motion.div
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-full"
           style={{
-            background: `radial-gradient(circle at ${shineX} ${shineY}, rgba(255,232,200,0.55), transparent 45%)`,
+            background: `radial-gradient(circle at ${shineX} ${shineY}, rgba(255,232,200,0.30), transparent 50%)`,
             mixBlendMode: "screen",
           }}
         />
-        <span
-          className="relative font-serif-italic text-[42px] text-cream drop-shadow-md sm:text-5xl"
-          style={{ transform: "translateZ(30px)" }}
-        >
-          {initials}
-        </span>
+        {!photo && (
+          <span
+            className="relative font-serif-italic text-[42px] text-cream drop-shadow-md sm:text-5xl"
+            style={{ transform: "translateZ(30px)" }}
+          >
+            {initials}
+          </span>
+        )}
       </motion.div>
     </motion.div>
   );
@@ -98,9 +91,9 @@ const Mentor = () => {
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-hair border-cream-10 md:grid-cols-12">
           <Reveal className="md:col-span-7">
-            <div className="relative h-full border-r border-b border-hair border-cream-10 bg-[rgba(8,14,28,0.45)] p-8 md:p-12">
+            <div className="relative h-full border-r border-r-[0.5px] border-b border-b-[0.5px] border-cream-10 bg-[rgba(8,14,28,0.45)] p-8 md:p-12">
               <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-                <MentorOrb initials={MENTOR.lead.initials} />
+                <MentorOrb initials={MENTOR.lead.initials} photo={MENTOR.lead.photo} />
                 <div>
                   <h3
                     className="font-serif text-[38px] leading-none text-cream sm:text-[48px]"
@@ -137,26 +130,28 @@ const Mentor = () => {
             </div>
           </Reveal>
 
-          <div className="flex flex-col border-b border-hair border-cream-10 md:col-span-5">
+          <div className="flex flex-col border-b border-b-[0.5px] border-cream-10 md:col-span-5">
             <div className="px-8 pt-8 pb-2 md:px-10 md:pt-10">
               <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
                 Backed by the MAXY AI leadership team
               </span>
             </div>
             {MENTOR.team.map((m, i) => (
-              <Reveal key={i} delay={i * 0.1}>
+              <Reveal key={i} delay={i * 0.1} className="flex-1 flex flex-col">
                 <motion.div
                   whileHover={{ x: 8, backgroundColor: "rgba(201,146,10,0.04)" }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                  className="group flex items-center gap-4 border-t border-hair border-cream-10 px-8 py-7 md:px-10 cursor-pointer"
+                  className="group flex h-full items-center gap-4 border-t border-t-[0.5px] border-cream-10 px-8 py-7 md:px-10 cursor-pointer"
                 >
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.08 }}
-                    transition={{ duration: 1 }}
-                    className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-hair border-cream-15 bg-[rgba(201,146,10,0.08)] font-mono text-[12px] tracking-wider text-[#C9920A]"
-                  >
-                    {m.initials}
-                  </motion.div>
+                  <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                    {m.photo ? (
+                      <img src={m.photo} alt={m.name} className="h-full w-full object-cover" />
+                    ) : (
+                      <div className="grid h-full w-full place-items-center bg-[rgba(201,146,10,0.08)] font-mono text-[12px] tracking-wider text-[#C9920A]">
+                        {m.initials}
+                      </div>
+                    )}
+                  </div>
                   <div className="min-w-0 flex-1">
                     <div
                       className="font-serif text-[22px] leading-tight text-cream"
