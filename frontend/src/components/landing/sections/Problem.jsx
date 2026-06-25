@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
 import Reveal from "@/components/landing/ui/Reveal";
@@ -40,14 +40,14 @@ const Problem = () => {
                 >
                   <div className="relative h-full overflow-hidden rounded-2xl p-8 md:p-12">
                     <div className="flex items-start gap-8">
-                      <motion.span
+                      <m.span
                         whileHover={{ scale: 1.1, x: 4 }}
                         transition={{ type: "spring", stiffness: 260, damping: 20 }}
                         className="font-serif text-[56px] leading-none text-[#C9920A] md:text-[72px]"
                         style={{ letterSpacing: "-0.04em", transformOrigin: "left center", display: "inline-block" }}
                       >
                         {it.n}
-                      </motion.span>
+                      </m.span>
                       <div className="flex-1">
                         <h3
                           className="font-serif text-[26px] leading-[1.05] text-cream md:text-[32px]"

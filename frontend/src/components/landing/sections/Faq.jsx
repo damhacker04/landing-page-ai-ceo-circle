@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 
@@ -29,7 +29,7 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
             </span>
           </span>
         </div>
-        <motion.span
+        <m.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className={`mt-1 grid h-11 w-11 shrink-0 place-items-center rounded-full border-hair ${
@@ -37,11 +37,11 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
           }`}
         >
           <Plus className="h-4 w-4" />
-        </motion.span>
+        </m.span>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -51,7 +51,7 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
             <div className="pb-8 pl-[80px] pr-[72px] text-[15px] leading-relaxed text-cream-soft md:pl-[92px] md:pr-[88px]">
               {item.a}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

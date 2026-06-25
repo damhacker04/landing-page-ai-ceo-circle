@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
 import Reveal from "@/components/landing/ui/Reveal";
@@ -47,14 +47,14 @@ const Ecosystem = () => {
             <div className="flex flex-col">
               {ECOSYSTEM.cards.map((c, i) => (
                 <Reveal key={i} delay={i * 0.1}>
-                  <motion.div
+                  <m.div
                     whileHover="hover"
                     initial="rest"
                     animate="rest"
                     className="group relative cursor-default overflow-hidden border-t border-hair border-cream-10 py-9 last:border-b"
                   >
                     {/* Bottom lava line */}
-                    <motion.span
+                    <m.span
                       aria-hidden
                       variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
                       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -63,15 +63,15 @@ const Ecosystem = () => {
                     />
 
                     <div className="relative z-10 flex items-baseline gap-6">
-                      <motion.span
+                      <m.span
                         variants={{ rest: { scale: 1, x: 0 }, hover: { scale: 1.1, x: 4 } }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="font-serif text-4xl text-[#C9920A] md:text-5xl"
                         style={{ letterSpacing: "-0.04em", transformOrigin: "left center", display: "inline-block" }}
                       >
                         {String(i + 1).padStart(2, "0")}
-                      </motion.span>
-                      <motion.div
+                      </m.span>
+                      <m.div
                         variants={{ rest: { x: 0 }, hover: { x: 8 } }}
                         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                         className="flex-1"
@@ -89,9 +89,9 @@ const Ecosystem = () => {
                         <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
                           {c.tag}
                         </span>
-                      </motion.div>
+                      </m.div>
                     </div>
-                  </motion.div>
+                  </m.div>
                 </Reveal>
               ))}
             </div>

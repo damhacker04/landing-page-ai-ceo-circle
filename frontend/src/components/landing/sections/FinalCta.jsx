@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import Reveal from "@/components/landing/ui/Reveal";
@@ -51,34 +51,17 @@ const FinalCta = () => {
   };
 
   return (
-    <section id="apply" className="relative z-10 overflow-hidden py-32 md:py-44">
-      {/* Atmospheric lava backdrop */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="absolute -top-24 right-[5%] h-[640px] w-[640px] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle at 40% 40%, rgba(201,146,10,0.22), rgba(138,102,8,0.10) 45%, transparent 72%)",
-            filter: "blur(90px)",
-          }}
-        />
-        <div
-          className="absolute bottom-[-10%] left-[-8%] h-[560px] w-[560px] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle at 55% 55%, rgba(31,49,96,0.55), rgba(13,23,41,0.28) 48%, transparent 75%)",
-            filter: "blur(90px)",
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(214,58,10,0.28), transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-      </div>
+    <section
+      id="apply"
+      className="relative z-10 overflow-hidden py-32 md:py-44"
+      style={{
+        background: [
+          "radial-gradient(ellipse 65% 55% at 95% 5%, rgba(201,146,10,0.16), transparent 60%)",
+          "radial-gradient(ellipse 60% 50% at 5% 95%, rgba(31,49,96,0.28), transparent 60%)",
+          "radial-gradient(ellipse 40% 35% at 50% 50%, rgba(214,58,10,0.12), transparent 60%)",
+        ].join(", "),
+      }}
+    >
 
       <Container>
         <Reveal>
@@ -155,7 +138,7 @@ const FinalCta = () => {
                 </div>
               </form>
             ) : (
-              <motion.div initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }}
+              <m.div initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-10 border-t border-hair border-cream-10 pt-16 text-center">
                 <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border-hair border-[#C9920A]/40 bg-[#C9920A]/10 text-[#C9920A]">
@@ -171,7 +154,7 @@ const FinalCta = () => {
                   className="mt-8 inline-flex min-h-[44px] items-center font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim hover:text-cream">
                   Submit another
                 </button>
-              </motion.div>
+              </m.div>
             )}
           </div>
         </Reveal>

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
@@ -10,26 +10,26 @@ import { Check, X } from "lucide-react";
 import { QUALIFICATION } from "@/components/landing/data";
 
 const QualItem = ({ num, text, accent }) => (
-  <motion.li
+  <m.li
     whileHover={{ x: 5 }}
     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     className="flex items-start gap-5 border-t border-t-[0.5px] border-cream-10 pt-5 first:border-t-0 first:pt-0 cursor-default"
   >
-    <motion.span
+    <m.span
       whileHover={{ color: accent ? "#ff7a3d" : "#efe7d6" }}
       transition={{ duration: 0.3 }}
       className="font-serif text-[26px] leading-none"
       style={{ letterSpacing: "-0.04em", color: accent ? "#C9920A" : "rgba(239,231,214,0.4)" }}
     >
       {num}
-    </motion.span>
+    </m.span>
     <span
       className="flex-1 font-serif text-[18px] leading-[1.3] md:text-[21px]"
       style={{ letterSpacing: "-0.025em", color: accent ? "#efe7d6" : "rgba(239,231,214,0.7)" }}
     >
       {text}
     </span>
-  </motion.li>
+  </m.li>
 );
 
 const Qualification = () => {

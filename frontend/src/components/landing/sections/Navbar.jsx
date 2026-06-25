@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import MagneticButton from "@/components/landing/ui/MagneticButton";
@@ -31,7 +31,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
+    <m.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -45,14 +45,14 @@ const Navbar = () => {
           <span className="font-serif text-[26px] leading-none tracking-tight text-cream md:text-[30px]">
             AI CEO Circle
           </span>
-          <motion.span
+          <m.span
             whileHover={{ scale: 1.3, color: "#ff7a3d" }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
             className="font-serif-italic text-lava text-[18px] md:text-[20px]"
             style={{ display: "inline-block" }}
           >
             .
-          </motion.span>
+          </m.span>
         </a>
 
         {/* Desktop links */}
@@ -69,7 +69,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <motion.button
+        <m.button
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
@@ -78,21 +78,21 @@ const Navbar = () => {
         >
           <AnimatePresence mode="wait" initial={false}>
             {open ? (
-              <motion.span key="x" initial={{ rotate: -45, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 45, opacity: 0 }} transition={{ duration: 0.2 }}>
+              <m.span key="x" initial={{ rotate: -45, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 45, opacity: 0 }} transition={{ duration: 0.2 }}>
                 <X className="h-4 w-4" />
-              </motion.span>
+              </m.span>
             ) : (
-              <motion.span key="menu" initial={{ rotate: 45, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -45, opacity: 0 }} transition={{ duration: 0.2 }}>
+              <m.span key="menu" initial={{ rotate: 45, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -45, opacity: 0 }} transition={{ duration: 0.2 }}>
                 <Menu className="h-4 w-4" />
-              </motion.span>
+              </m.span>
             )}
           </AnimatePresence>
-        </motion.button>
+        </m.button>
       </Container>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -101,7 +101,7 @@ const Navbar = () => {
           >
             <Container className="flex flex-col gap-1 py-4">
               {NAV_LINKS.map((l, i) => (
-                <motion.a
+                <m.a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
@@ -111,7 +111,7 @@ const Navbar = () => {
                   className="rounded-lg px-3 py-3 text-sm text-cream-soft transition-colors hover:bg-cream/[0.04] hover:text-cream"
                 >
                   {l.label}
-                </motion.a>
+                </m.a>
               ))}
               <div className="pt-2">
                 <MagneticButton href="#apply" icon={ArrowUpRight}>
@@ -119,10 +119,10 @@ const Navbar = () => {
                 </MagneticButton>
               </div>
             </Container>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </m.nav>
   );
 };
 

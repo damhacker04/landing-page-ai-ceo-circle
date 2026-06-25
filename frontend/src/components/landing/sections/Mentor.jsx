@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
@@ -24,22 +24,22 @@ const MentorOrb = ({ initials, photo }) => {
   const reset = () => { mx.set(0.5); my.set(0.5); };
 
   return (
-    <motion.div
+    <m.div
       onMouseMove={onMove}
       onMouseLeave={reset}
       style={{ transformPerspective: 1200 }}
       className="relative h-32 w-32 sm:h-36 sm:w-36"
     >
       <div className="absolute -inset-6 rounded-full bg-[#C9920A]/30 blur-3xl" aria-hidden />
-      <motion.div
+      <m.div
         animate={{ rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         className="absolute -inset-4 rounded-full border-hair border-cream-10"
       >
         <span className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#C9920A] shadow-[0_0_16px_3px_rgba(201,146,10,0.6)]" />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         transition={{ type: "spring", stiffness: 200, damping: 22 }}
         className="relative grid h-full w-full place-items-center overflow-hidden rounded-full border-hair border-cream-15"
@@ -49,7 +49,7 @@ const MentorOrb = ({ initials, photo }) => {
         ) : (
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_#ffcb9a,_#ff7a3d_45%,_#9a2b08_82%,_#1c0a02)]" />
         )}
-        <motion.div
+        <m.div
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-full"
           style={{
@@ -65,8 +65,8 @@ const MentorOrb = ({ initials, photo }) => {
             {initials}
           </span>
         )}
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 };
 
@@ -114,14 +114,14 @@ const Mentor = () => {
               <p className="mt-10 max-w-2xl text-[15px] leading-relaxed text-cream-soft">{MENTOR.lead.bio}</p>
               <div className="mt-8 flex flex-wrap gap-2">
                 {MENTOR.lead.chips.map((c, i) => (
-                  <motion.span
+                  <m.span
                     key={i}
                     whileHover={{ y: -2, borderColor: "rgba(201,146,10,0.45)", color: "#efe7d6" }}
                     transition={{ duration: 0.5 }}
                     className="rounded-full border-hair border-cream-15 bg-cream/[0.02] px-3.5 py-1.5 text-[11.5px] tracking-tight text-cream-soft"
                   >
                     {c}
-                  </motion.span>
+                  </m.span>
                 ))}
               </div>
             </div>
@@ -133,19 +133,19 @@ const Mentor = () => {
                 Backed by the MAXY AI leadership team
               </span>
             </div>
-            {MENTOR.team.map((m, i) => (
+            {MENTOR.team.map((member, i) => (
               <Reveal key={i} delay={i * 0.1} className="flex-1 flex flex-col">
-                <motion.div
+                <m.div
                   whileHover={{ x: 8, backgroundColor: "rgba(201,146,10,0.04)" }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   className="group flex h-full items-center gap-4 border-t border-t-[0.5px] border-cream-10 px-8 py-7 md:px-10 cursor-pointer"
                 >
                   <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
-                    {m.photo ? (
-                      <img src={m.photo} alt={m.name} className="h-full w-full object-cover" />
+                    {member.photo ? (
+                      <img src={member.photo} alt={member.name} className="h-full w-full object-cover" />
                     ) : (
                       <div className="grid h-full w-full place-items-center bg-[rgba(201,146,10,0.08)] font-mono text-[12px] tracking-wider text-[#C9920A]">
-                        {m.initials}
+                        {member.initials}
                       </div>
                     )}
                   </div>
@@ -154,11 +154,11 @@ const Mentor = () => {
                       className="font-serif text-[22px] leading-tight text-cream"
                       style={{ letterSpacing: "-0.03em" }}
                     >
-                      {m.name}
+                      {member.name}
                     </div>
-                    <p className="mt-1 text-[12.5px] leading-relaxed text-cream-dim">{m.role}</p>
+                    <p className="mt-1 text-[12.5px] leading-relaxed text-cream-dim">{member.role}</p>
                   </div>
-                </motion.div>
+                </m.div>
               </Reveal>
             ))}
           </div>

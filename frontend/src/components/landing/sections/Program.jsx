@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
 import Reveal from "@/components/landing/ui/Reveal";
@@ -37,19 +37,19 @@ const Program = () => {
         <div className="mt-16 flex flex-col">
           {PROGRAM.items.map((it, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <motion.div
+              <m.div
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
                 className="group relative border-t border-hair border-cream-10 py-12 last:border-b md:py-16 cursor-pointer overflow-hidden"
               >
-                <motion.span
+                <m.span
                   aria-hidden
                   variants={{ rest: { x: "-100%" }, hover: { x: "100%" } }}
                   transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
                   className="pointer-events-none absolute inset-y-0 -inset-x-1/3 z-0 w-1/3 bg-gradient-to-r from-transparent via-[#C9920A]/15 to-transparent blur-2xl"
                 />
-                <motion.span
+                <m.span
                   aria-hidden
                   variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -58,7 +58,7 @@ const Program = () => {
                 />
 
                 <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
-                  <motion.div
+                  <m.div
                     variants={{ rest: { scale: 1, x: 0 }, hover: { scale: 1.12, x: 10 } }}
                     transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                     className="md:col-span-2"
@@ -70,8 +70,8 @@ const Program = () => {
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                  </motion.div>
-                  <motion.div
+                  </m.div>
+                  <m.div
                     variants={{ rest: { x: 0 }, hover: { x: 8 } }}
                     transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                     className="md:col-span-5"
@@ -88,25 +88,25 @@ const Program = () => {
                     <span className="mt-4 inline-block font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
                       {it.tag}
                     </span>
-                  </motion.div>
-                  <motion.div
+                  </m.div>
+                  <m.div
                     variants={{ rest: { opacity: 0.85, x: 0 }, hover: { opacity: 1, x: 4 } }}
                     transition={{ duration: 0.6 }}
                     className="md:col-span-5"
                   >
                     <p className="text-[15px] leading-relaxed text-cream-soft">{it.body}</p>
-                  </motion.div>
+                  </m.div>
                 </div>
 
-                <motion.span
+                <m.span
                   aria-hidden
                   variants={{ rest: { opacity: 0, x: -8 }, hover: { opacity: 1, x: 0 } }}
                   transition={{ duration: 0.6 }}
                   className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[#C9920A]"
                 >
                   <ArrowUpRight className="h-6 w-6" />
-                </motion.span>
-              </motion.div>
+                </m.span>
+              </m.div>
             </Reveal>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
@@ -44,27 +44,27 @@ const Aftermath = () => {
         <div className="mt-14 flex flex-col">
           {AFTERMATH.steps.map((s, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <motion.div
+              <m.div
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
                 className="group relative cursor-pointer overflow-hidden border-t border-hair border-cream-10 py-11 last:border-b md:py-14"
               >
-                <motion.span aria-hidden
+                <m.span aria-hidden
                   variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                   style={{ originX: 0 }}
                   className="pointer-events-none absolute inset-x-0 -bottom-[0.5px] h-px bg-gradient-to-r from-[#C9920A] via-[#ff7a3d] to-transparent"
                 />
                 <div className="grid grid-cols-1 items-baseline gap-6 md:grid-cols-12 md:gap-10">
-                  <motion.div
+                  <m.div
                     variants={{ rest: { x: 0 }, hover: { x: 6 } }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="md:col-span-2"
                   >
                     <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-[#C9920A]">{s.tag}</span>
-                  </motion.div>
-                  <motion.div
+                  </m.div>
+                  <m.div
                     variants={{ rest: { x: 0 }, hover: { x: 8 } }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="md:col-span-5"
@@ -78,12 +78,12 @@ const Aftermath = () => {
                         {s.title.split(" ").slice(-1)[0]}
                       </span>
                     </h3>
-                  </motion.div>
+                  </m.div>
                   <div className="md:col-span-5">
                     <p className="text-[14.5px] leading-relaxed text-cream-soft">{s.body}</p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </Reveal>
           ))}
         </div>

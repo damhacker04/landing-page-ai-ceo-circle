@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * MagneticButton — magma-style ghost/lava pill button with subtle magnetic pull.
@@ -36,7 +36,7 @@ const MagneticButton = ({
   const Tag = href ? "a" : "button";
 
   return (
-    <motion.span
+    <m.span
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={reset}
@@ -57,7 +57,7 @@ const MagneticButton = ({
           <Icon className="relative h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
         )}
       </Tag>
-    </motion.span>
+    </m.span>
   );
 };
 

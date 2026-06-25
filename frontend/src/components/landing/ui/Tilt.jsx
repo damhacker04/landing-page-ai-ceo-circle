@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 /**
  * Tilt — 3D card with mouse-tracking rotateX/rotateY, dynamic gold/lava sheen,
@@ -52,7 +52,7 @@ const Tilt = ({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseEnter={() => setActive(true)}
@@ -74,7 +74,7 @@ const Tilt = ({
 
       {/* Glare — follows cursor */}
       {glare && (
-        <motion.div
+        <m.div
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-[inherit] mix-blend-screen"
           style={{
@@ -90,14 +90,14 @@ const Tilt = ({
 
       {/* Lava glow on bottom edge when hovered */}
       {glow && (
-        <motion.div
+        <m.div
           aria-hidden
           className="pointer-events-none absolute -bottom-8 left-1/2 h-20 w-3/4 -translate-x-1/2 rounded-full bg-[#ff5d2a]/30 blur-2xl"
           animate={{ opacity: active ? 0.7 : 0 }}
           transition={{ duration: 0.4 }}
         />
       )}
-    </motion.div>
+    </m.div>
   );
 };
 

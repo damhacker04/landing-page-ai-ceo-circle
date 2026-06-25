@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
 import Reveal from "@/components/landing/ui/Reveal";
@@ -56,7 +56,7 @@ const FlipCard = ({ conviction, index }) => {
         onMouseLeave={() => setFlipped(false)}
         onClick={() => setFlipped((f) => !f)}
       >
-        <motion.div
+        <m.div
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration, ease: [0.22, 1, 0.36, 1] }}
           style={{ transformStyle: "preserve-3d", position: "relative", width: "100%", height: "100%" }}
@@ -125,7 +125,7 @@ const FlipCard = ({ conviction, index }) => {
               </span>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </Reveal>
   );

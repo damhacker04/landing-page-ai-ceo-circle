@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 const BigSerifMarquee = ({
   words = [],
@@ -21,13 +21,13 @@ const BigSerifMarquee = ({
 
   const wordItems = words.map((w, i) => (
     <span key={i} className="flex shrink-0 items-center gap-12">
-      <motion.span
+      <m.span
         whileHover={{ scale: 1.08, color: "#ffae7a" }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className={`font-serif-italic whitespace-nowrap ${fontCls} leading-[0.9] text-cream cursor-default`}
       >
         {w}
-      </motion.span>
+      </m.span>
       <span className="font-serif-italic text-[#ff5d2a]/70 text-6xl md:text-7xl lg:text-8xl">
         {separator}
       </span>

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Navbar from "@/components/landing/sections/Navbar";
 import Hero from "@/components/landing/sections/Hero";
 import BuiltOnConvictions from "@/components/landing/sections/BuiltOnConvictions";
@@ -19,6 +20,7 @@ import FixedGrid from "@/components/landing/ui/FixedGrid";
 
 const LandingPage = () => {
   return (
+    <LazyMotion features={domAnimation}>
     <main className="relative min-h-screen">
       <div
         aria-hidden
@@ -49,6 +51,7 @@ const LandingPage = () => {
       <FinalCta />
       <Footer />
     </main>
+    </LazyMotion>
   );
 };
 

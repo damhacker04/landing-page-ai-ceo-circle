@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import MagneticButton from "@/components/landing/ui/MagneticButton";
@@ -16,7 +16,7 @@ const Hero = () => {
 
       {/* Status pill */}
       <Container className="relative z-10 pt-4 md:pt-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -29,7 +29,7 @@ const Hero = () => {
           <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
             {HERO.eyebrow}
           </span>
-        </motion.div>
+        </m.div>
       </Container>
 
       {/* Split layout: heading + content left, photo right */}
@@ -54,12 +54,12 @@ const Hero = () => {
               .hero-display h1 > span:last-child {
                 font-size: clamp(44px, 8.5vw, 140px);
                 letter-spacing: -0.05em;
-                text-shadow: 0 0 30px rgba(255,95,38,0.35), 0 0 60px rgba(255,70,20,0.18);
+                text-shadow: 0 0 20px rgba(255,95,38,0.18);
                 margin-top: -0.05em;
               }
             `}</style>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.4, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -90,25 +90,29 @@ const Hero = () => {
                   </span>
                 </a>
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Right column: hero photo — desktop only */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="hidden md:block md:col-span-5"
           >
             <div className="relative overflow-hidden rounded-2xl" style={{ height: "540px" }}>
-              <img
-                src="https://picsum.photos/seed/ai-ceo-executive/600/750"
-                alt="Executive AI leadership"
-                className="h-full w-full object-cover"
-                fetchPriority="high"
-                loading="eager"
+              {/* Placeholder until real executive portrait is available */}
+              <div
+                className="h-full w-full"
+                style={{
+                  background: [
+                    "radial-gradient(ellipse 80% 60% at 60% 25%, rgba(201,146,10,0.22), transparent 55%)",
+                    "radial-gradient(ellipse 65% 55% at 25% 75%, rgba(31,49,96,0.45), transparent 60%)",
+                    "radial-gradient(ellipse 50% 40% at 85% 65%, rgba(214,58,10,0.18), transparent 55%)",
+                    "linear-gradient(160deg, #1a2848 0%, #0d1828 40%, #12100a 70%, #1e1508 100%)",
+                  ].join(", "),
+                }}
               />
-              {/* Bottom-to-top dark overlay so hero bg bleeds naturally */}
               <div
                 className="absolute inset-0"
                 style={{
@@ -116,7 +120,6 @@ const Hero = () => {
                     "linear-gradient(to top, rgba(7,14,28,0.88) 0%, rgba(7,14,28,0.28) 45%, rgba(7,14,28,0.06) 100%)",
                 }}
               />
-              {/* Lava warmth accent */}
               <div
                 className="absolute inset-0"
                 style={{
@@ -125,7 +128,7 @@ const Hero = () => {
                 }}
               />
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </Container>
 
@@ -134,25 +137,25 @@ const Hero = () => {
         <div className="hairline" />
         <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
           {STATS_HERO.map((s, i) => (
-            <motion.div
+            <m.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.9 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="group flex flex-col"
             >
-              <motion.span
+              <m.span
                 whileHover={{ color: "#ff7a3d" }}
                 transition={{ duration: 0.3 }}
                 className="font-serif text-[38px] leading-none text-cream sm:text-[44px]"
                 style={{ letterSpacing: "-0.04em" }}
               >
                 {s.value}
-              </motion.span>
+              </m.span>
               <span className="mt-1.5 font-mono text-[10px] uppercase leading-tight tracking-[0.32em] text-cream-dim">
                 {s.label}
               </span>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </Container>

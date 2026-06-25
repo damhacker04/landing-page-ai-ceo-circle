@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 const Reveal = ({
   children,
@@ -12,7 +12,7 @@ const Reveal = ({
 }) => {
   const prefersReduced = useReducedMotion();
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: prefersReduced ? 0 : y, scale: prefersReduced ? 1 : scale }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once, margin: "-80px" }}
@@ -20,7 +20,7 @@ const Reveal = ({
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 

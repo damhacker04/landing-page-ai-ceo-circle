@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * GlowCard — magma editorial card with hairline border, faint navy glass,
@@ -24,7 +24,7 @@ const GlowCard = ({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseEnter={() => setActive(true)}
@@ -45,7 +45,7 @@ const GlowCard = ({
       )}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/15 to-transparent" />
       <div className="relative z-10">{children}</div>
-    </motion.div>
+    </m.div>
   );
 };
 

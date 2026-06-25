@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
 import Reveal from "@/components/landing/ui/Reveal";
@@ -37,21 +37,21 @@ const Timeline = () => {
         <div className="mt-16 flex flex-col">
           {TIMELINE.steps.map((s, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <motion.div
+              <m.div
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
                 className="group relative cursor-default overflow-hidden border-t border-hair border-cream-10 py-12 last:border-b md:py-14"
               >
                 {/* Lava sweep on hover */}
-                <motion.span
+                <m.span
                   aria-hidden
                   variants={{ rest: { x: "-110%" }, hover: { x: "110%" } }}
                   transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
                   className="pointer-events-none absolute inset-y-0 -inset-x-1/4 z-0 w-1/3 bg-gradient-to-r from-transparent via-[#C9920A]/10 to-transparent blur-2xl"
                 />
                 {/* Bottom lava line */}
-                <motion.span
+                <m.span
                   aria-hidden
                   variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -60,24 +60,24 @@ const Timeline = () => {
                 />
 
                 <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
-                  <motion.div
+                  <m.div
                     variants={{ rest: { x: 0 }, hover: { x: 5 } }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="md:col-span-3"
                   >
                     <div className="flex items-center gap-3">
                       <span className="relative grid h-2 w-2 place-items-center rounded-full bg-[#C9920A] animate-lava-pulse" />
-                      <motion.span
+                      <m.span
                         variants={{ rest: { color: "rgba(239,231,214,0.55)" }, hover: { color: "#C9920A" } }}
                         transition={{ duration: 0.4 }}
                         className="font-mono text-[10px] uppercase tracking-[0.38em]"
                       >
                         {s.window}
-                      </motion.span>
+                      </m.span>
                     </div>
-                  </motion.div>
+                  </m.div>
 
-                  <motion.div
+                  <m.div
                     variants={{ rest: { x: 0 }, hover: { x: 8 } }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="md:col-span-5"
@@ -91,17 +91,17 @@ const Timeline = () => {
                         {s.title.split(" ").slice(-1)[0]}
                       </span>
                     </h3>
-                  </motion.div>
+                  </m.div>
 
-                  <motion.div
+                  <m.div
                     variants={{ rest: { opacity: 0.7, x: 0 }, hover: { opacity: 1, x: 4 } }}
                     transition={{ duration: 0.6 }}
                     className="md:col-span-4"
                   >
                     <p className="text-[14.5px] leading-relaxed text-cream-soft">{s.body}</p>
-                  </motion.div>
+                  </m.div>
                 </div>
-              </motion.div>
+              </m.div>
             </Reveal>
           ))}
         </div>

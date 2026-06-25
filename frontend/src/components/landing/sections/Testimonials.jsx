@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
 import Reveal from "@/components/landing/ui/Reveal";
@@ -40,14 +40,14 @@ const Testimonials = () => {
                   radius={420}
                 >
                   <div className="relative flex h-full flex-col overflow-hidden rounded-2xl p-8 md:p-10">
-                    <motion.span
+                    <m.span
                       whileHover={{ scale: 1.05, color: "rgba(201,146,10,0.65)" }}
                       transition={{ duration: 0.5 }}
                       className="font-serif-italic text-[88px] leading-none text-[#C9920A]/40"
                       style={{ display: "inline-block" }}
                     >
                       "
-                    </motion.span>
+                    </m.span>
                     <p
                       className="-mt-8 font-serif text-[20px] leading-[1.32] text-cream md:text-[23px]"
                       style={{ letterSpacing: "-0.02em" }}
@@ -56,7 +56,7 @@ const Testimonials = () => {
                     </p>
                     <div className="mt-auto flex items-center gap-3 border-t border-t-[0.5px] border-cream-10 pt-6">
                       {t.photo ? (
-                        <motion.img
+                        <m.img
                           src={t.photo}
                           alt={t.name}
                           whileHover={{ scale: 1.12, rotate: -8 }}
@@ -64,13 +64,13 @@ const Testimonials = () => {
                           className="h-10 w-10 shrink-0 rounded-full object-cover"
                         />
                       ) : (
-                        <motion.div
+                        <m.div
                           whileHover={{ scale: 1.12, rotate: -8 }}
                           transition={{ type: "spring", stiffness: 280, damping: 18 }}
                           className="grid h-10 w-10 shrink-0 rounded-full place-items-center bg-[rgba(201,146,10,0.08)] font-mono text-[11px] tracking-wider text-[#C9920A]"
                         >
                           {t.initials}
-                        </motion.div>
+                        </m.div>
                       )}
                       <div className="flex flex-col">
                         <span className="text-[13.5px] font-medium text-cream">{t.name}</span>
