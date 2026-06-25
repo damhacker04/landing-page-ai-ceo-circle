@@ -20,7 +20,7 @@ const Ecosystem = () => {
         className="py-4 opacity-80"
       />
 
-      <Container className="pt-28 pb-32 md:pt-36 md:pb-40">
+      <Container className="pt-16 pb-20 md:pt-20 md:pb-24">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <Reveal className="mt-7">

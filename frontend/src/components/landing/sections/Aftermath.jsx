@@ -10,7 +10,7 @@ const Aftermath = () => {
   return (
     <section id="after" className="relative z-10">
       <BigSerifMarquee words={["Train", "Transform", "Place Talent"]} size="xl" reverse className="py-6 opacity-80" />
-      <Container className="pt-24 pb-28 md:pt-28 md:pb-40">
+      <Container className="pt-12 pb-16 md:pt-16 md:pb-20">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <SectionLabel>{AFTERMATH.label}</SectionLabel>

@@ -21,7 +21,6 @@ const Tilt = ({
   max = 8,
   scale = 1.02,
   glare = true,
-  glow = true,
   as: Tag = "div",
   ...rest
 }) => {
@@ -88,15 +87,6 @@ const Tilt = ({
         />
       )}
 
-      {/* Lava glow on bottom edge when hovered */}
-      {glow && (
-        <m.div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-8 left-1/2 h-20 w-3/4 -translate-x-1/2 rounded-full bg-[#ff5d2a]/30 blur-2xl"
-          animate={{ opacity: active ? 0.7 : 0 }}
-          transition={{ duration: 0.4 }}
-        />
-      )}
     </m.div>
   );
 };

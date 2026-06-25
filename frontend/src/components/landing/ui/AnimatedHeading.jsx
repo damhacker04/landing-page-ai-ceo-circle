@@ -5,7 +5,7 @@ const container = {
   hidden: { opacity: 1 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.03, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.1 },
   },
 };
 
@@ -20,8 +20,6 @@ const child = {
 };
 
 const AnimatedWord = ({ word, italic, gradient }) => {
-  const letters = Array.from(word);
-
   const colorStyle =
     gradient === "lava"
       ? { color: "#ff7a3d" }
@@ -38,19 +36,16 @@ const AnimatedWord = ({ word, italic, gradient }) => {
         clipPath: italic
           ? "inset(-0.06em -0.2em -0.5em -0.2em)"
           : "inset(0 -0.08em -0.4em -0.08em)",
-        paddingBottom: italic ? "0.18em" : 0,
+        paddingBottom: italic ? "0.09em" : 0,
         ...colorStyle,
       }}
     >
-      {letters.map((ch, i) => (
-        <m.span
-          key={i}
-          variants={child}
-          style={{ display: "inline-block", transformOrigin: "bottom" }}
-        >
-          {ch}
-        </m.span>
-      ))}
+      <m.span
+        variants={child}
+        style={{ display: "inline-block", transformOrigin: "bottom" }}
+      >
+        {word}
+      </m.span>
     </span>
   );
 };

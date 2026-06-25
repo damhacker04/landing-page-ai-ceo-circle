@@ -10,7 +10,7 @@ import { HERO, STATS_HERO } from "@/components/landing/data";
 
 const Hero = () => {
   return (
-    <section id="top" className="relative isolate overflow-hidden min-h-[100svh] pt-6 pb-24 md:pb-36">
+    <section id="top" className="relative isolate overflow-hidden min-h-[100svh] pt-20 pb-24 md:pt-24 md:pb-36">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#070e1c]" />
       <LavaFlowBackdrop />
 
@@ -49,13 +49,14 @@ const Hero = () => {
             <style>{`
               .hero-display { font-family: var(--font-instrument-serif), 'Instrument Serif', serif; }
               .hero-display h1 { display: block; }
-              .hero-display h1 > span { display: block; line-height: 0.92; letter-spacing: -0.045em; }
+              .hero-display h1 > span { display: block; line-height: 0.86; letter-spacing: -0.045em; }
+              .hero-display h1 span.font-serif-italic { padding-bottom: 0 !important; }
               .hero-display h1 > span:first-child { font-size: clamp(40px, 7.2vw, 120px); }
               .hero-display h1 > span:last-child {
                 font-size: clamp(44px, 8.5vw, 140px);
                 letter-spacing: -0.05em;
                 text-shadow: 0 0 20px rgba(255,95,38,0.18);
-                margin-top: -0.05em;
+                margin-top: 0.12em;
               }
             `}</style>
 
@@ -93,14 +94,14 @@ const Hero = () => {
             </m.div>
           </div>
 
-          {/* Right column: hero photo — desktop only */}
+          {/* Right column: hero photo */}
           <m.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden md:block md:col-span-5"
+            className="md:col-span-5"
           >
-            <div className="relative overflow-hidden rounded-2xl" style={{ height: "540px" }}>
+            <div className="relative overflow-hidden rounded-2xl h-64 sm:h-80 md:h-[540px]">
               {/* Placeholder until real executive portrait is available */}
               <div
                 className="h-full w-full"
@@ -152,7 +153,7 @@ const Hero = () => {
               >
                 {s.value}
               </m.span>
-              <span className="mt-1.5 font-mono text-[10px] uppercase leading-tight tracking-[0.32em] text-cream-dim">
+              <span className="mt-2 font-mono text-[12px] uppercase leading-tight tracking-[0.18em] text-cream-soft">
                 {s.label}
               </span>
             </m.div>

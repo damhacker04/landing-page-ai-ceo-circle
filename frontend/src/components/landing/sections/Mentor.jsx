@@ -30,7 +30,11 @@ const MentorOrb = ({ initials, photo }) => {
       style={{ transformPerspective: 1200 }}
       className="relative h-32 w-32 sm:h-36 sm:w-36"
     >
-      <div className="absolute -inset-6 rounded-full bg-[#C9920A]/30 blur-3xl" aria-hidden />
+      <div
+        aria-hidden
+        className="absolute -inset-6 rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(201,146,10,0.28), transparent 70%)" }}
+      />
       <m.div
         animate={{ rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -72,7 +76,7 @@ const MentorOrb = ({ initials, photo }) => {
 
 const Mentor = () => {
   return (
-    <section id="mentor" className="relative z-10 py-28 md:py-40">
+    <section id="mentor" className="relative z-10 py-16 md:py-20">
       <Container>
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
@@ -91,7 +95,7 @@ const Mentor = () => {
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-hair border-cream-10 md:grid-cols-12">
           <Reveal className="md:col-span-7">
-            <div className="relative h-full border-r border-r-[0.5px] border-b border-b-[0.5px] border-cream-10 bg-[rgba(8,14,28,0.45)] p-8 md:p-12">
+            <div className="relative h-full border-b border-b-[0.5px] border-cream-10 md:border-r md:border-r-[0.5px] bg-[rgba(8,14,28,0.45)] p-8 md:p-12">
               <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
                 <MentorOrb initials={MENTOR.lead.initials} photo={MENTOR.lead.photo} />
                 <div>

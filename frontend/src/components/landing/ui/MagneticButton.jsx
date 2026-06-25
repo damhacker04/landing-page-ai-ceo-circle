@@ -1,10 +1,6 @@
-import React, { useRef, useState } from "react";
-import { m } from "framer-motion";
+import React, { useRef } from "react";
+import { m, useMotionValue, useSpring } from "framer-motion";
 
-/**
- * MagneticButton — magma-style ghost/lava pill button with subtle magnetic pull.
- * variants: "primary" (lava-red), "ghost" (cream outline)
- */
 const MagneticButton = ({
   children,
   variant = "primary",
@@ -15,15 +11,21 @@ const MagneticButton = ({
   ...rest
 }) => {
   const ref = useRef(null);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const x = useSpring(rawX, { stiffness: 220, damping: 18, mass: 0.6 });
+  const y = useSpring(rawY, { stiffness: 220, damping: 18, mass: 0.6 });
 
   const onMouseMove = (e) => {
-    const rect = ref.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    setOffset({ x: x * 0.18, y: y * 0.25 });
+    const r = ref.current.getBoundingClientRect();
+    rawX.set((e.clientX - r.left - r.width / 2) * 0.18);
+    rawY.set((e.clientY - r.top - r.height / 2) * 0.25);
   };
-  const reset = () => setOffset({ x: 0, y: 0 });
+
+  const reset = () => {
+    rawX.set(0);
+    rawY.set(0);
+  };
 
   const base =
     "group relative inline-flex items-center gap-3 rounded-full px-7 py-3.5 text-[13px] font-medium tracking-tight transition-colors duration-300 whitespace-nowrap";
@@ -40,12 +42,15 @@ const MagneticButton = ({
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={reset}
-      animate={{ x: offset.x, y: offset.y }}
-      whileTap={{ scale: 0.97, y: 1 }}
-      transition={{ type: "spring", stiffness: 220, damping: 18 }}
-      className="inline-block"
+      whileTap={{ scale: 0.97 }}
+      style={{ x, y, display: "inline-block" }}
     >
-      <Tag href={href} onClick={onClick} className={`${base} ${styles} ${className}`} data-testid={rest["data-testid"]}>
+      <Tag
+        href={href}
+        onClick={onClick}
+        className={`${base} ${styles} ${className}`}
+        data-testid={rest["data-testid"]}
+      >
         {variant === "primary" && (
           <span
             className="pointer-events-none absolute -inset-2 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80"

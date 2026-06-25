@@ -14,6 +14,7 @@ import Qualification from "@/components/landing/sections/Qualification";
 import Mentor from "@/components/landing/sections/Mentor";
 import Aftermath from "@/components/landing/sections/Aftermath";
 import Faq from "@/components/landing/sections/Faq";
+import VideoSection from "@/components/landing/sections/VideoSection";
 import FinalCta from "@/components/landing/sections/FinalCta";
 import Footer from "@/components/landing/sections/Footer";
 import FixedGrid from "@/components/landing/ui/FixedGrid";
@@ -48,6 +49,7 @@ const LandingPage = () => {
       <Mentor />
       <Aftermath />
       <Faq />
+      <VideoSection />
       <FinalCta />
       <Footer />
     </main>

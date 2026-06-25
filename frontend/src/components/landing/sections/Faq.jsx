@@ -48,7 +48,7 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-8 pl-[80px] pr-[72px] text-[15px] leading-relaxed text-cream-soft md:pl-[92px] md:pr-[88px]">
+            <div className="pb-8 pl-[60px] pr-5 text-[15px] leading-relaxed text-cream-soft md:pl-[92px] md:pr-[88px]">
               {item.a}
             </div>
           </m.div>
@@ -61,7 +61,7 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
 const Faq = () => {
   const [open, setOpen] = useState(-1);
   return (
-    <section id="faq" className="relative z-10 py-28 md:py-40">
+    <section id="faq" className="relative z-10 py-16 md:py-20">
       <Container>
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">

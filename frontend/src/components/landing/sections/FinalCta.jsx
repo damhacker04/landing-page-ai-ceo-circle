@@ -53,7 +53,7 @@ const FinalCta = () => {
   return (
     <section
       id="apply"
-      className="relative z-10 overflow-hidden py-32 md:py-44"
+      className="relative z-10 overflow-hidden py-20 md:py-28"
       style={{
         background: [
           "radial-gradient(ellipse 65% 55% at 95% 5%, rgba(201,146,10,0.16), transparent 60%)",

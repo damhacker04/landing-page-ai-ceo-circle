@@ -37,7 +37,7 @@ const BigSerifMarquee = ({
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
       <div
-        className="flex"
+        className="flex w-max"
         style={
           prefersReduced
             ? {}

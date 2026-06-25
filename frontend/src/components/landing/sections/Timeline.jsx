@@ -16,7 +16,7 @@ const Timeline = () => {
         className="py-6 opacity-90"
       />
 
-      <Container className="pt-24 pb-28 md:pt-28 md:pb-40">
+      <Container className="pt-12 pb-16 md:pt-16 md:pb-20">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <Reveal className="mt-7">
@@ -66,7 +66,7 @@ const Timeline = () => {
                     className="md:col-span-3"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="relative grid h-2 w-2 place-items-center rounded-full bg-[#C9920A] animate-lava-pulse" />
+                      <span className="relative h-2 w-2 rounded-full bg-[#C9920A] animate-pulse" />
                       <m.span
                         variants={{ rest: { color: "rgba(239,231,214,0.55)" }, hover: { color: "#C9920A" } }}
                         transition={{ duration: 0.4 }}

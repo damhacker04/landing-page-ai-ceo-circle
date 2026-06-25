@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Program = () => {
   return (
-    <section id="program" className="relative z-10 py-28 md:py-40">
+    <section id="program" className="relative z-10 py-16 md:py-20">
       <Container>
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">

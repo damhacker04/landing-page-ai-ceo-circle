@@ -166,12 +166,6 @@ code { font-family: var(--font-jetbrains-mono), monospace; }
 .animate-marquee-slow { animation: marquee 40s linear infinite; }
 .animate-marquee-reverse { animation: marquee 30s linear infinite reverse; }
 
-/* Lava pulse for accents */
-@keyframes lavaPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 95, 38, 0.55), 0 0 28px 6px rgba(255, 95, 38, 0.18); }
-  50%      { box-shadow: 0 0 0 8px rgba(255, 95, 38, 0), 0 0 40px 10px rgba(255, 95, 38, 0.28); }
-}
-.animate-lava-pulse { animation: lavaPulse 2.6s ease-in-out infinite; }
 
 /* Drifting lava cloud */
 @keyframes drift {

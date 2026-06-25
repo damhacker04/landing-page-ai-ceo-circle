@@ -87,7 +87,7 @@ const Footer = () => {
           <span className="font-mono uppercase tracking-[0.32em]">
             © {new Date().getFullYear()} MAXY AI · All rights reserved
           </span>
-          <div className="flex items-center gap-5 font-mono uppercase tracking-[0.32em]">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono uppercase tracking-[0.32em]">
             <a href="#apply" className="hover:text-cream">Legal Notice</a>
             <a href="#apply" className="hover:text-cream">Privacy Policy</a>
             <a href="#apply" className="hover:text-cream">Cookies</a>
