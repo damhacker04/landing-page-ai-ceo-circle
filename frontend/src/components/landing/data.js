@@ -283,10 +283,6 @@ export const FAQ = {
       a: "AI CEO Circle is structured as a private executive engagement — not a course — and priced accordingly. Exact investment is shared after your application is reviewed and a discovery call confirms mutual fit. You will have full clarity before any commitment is made. Cohort selection is deliberate: peer quality is part of what you're investing in.",
     },
     {
-      q: "What happens after the 6 months?",
-      a: "Graduates unlock direct access to MAXY AI's full ecosystem: AI training for your entire team, agentic AI systems built inside your operations, and AI-native talent from MAXY Academy's graduate pipeline. AI CEO Circle is the entry point to a full company-level AI transformation journey.",
-    },
-    {
       q: "Who runs the program?",
       a: "Isaac Munandar leads all mentoring sessions personally. The MAXY AI team — Andy Toro (CTO), Stefen (PM), Ika (Ops) — supports the implementation, platform, and program delivery. This is not outsourced. The MAXY AI founding team is in the room with you.",
     },
@@ -322,3 +318,42 @@ export const FOOTER = {
     },
   ],
 };
+
+export const SOCIAL_MEDIA = {
+  label: "Social Media",
+  title: "Inside the AI CEO Circle",
+  description:
+    "Follow @aiceocircle on Instagram to get strategic insights, executive frameworks, and look behind the scenes of SEA's leading AI transformation circle.",
+  instagramUrl: "https://www.instagram.com/aiceocircle/",
+  items: [
+    {
+      id: 1,
+      image: "/images/instagram/post1.jpg",
+      url: "https://www.instagram.com/aiceocircle/p/DaA2q8mTWb_/",
+      title: "Elon Musk on AI Timeline",
+      summary: "Most CEOs are still treating AI as a 2027 problem. Elon Musk thinks the clock ran out already. The question isn't 'should we adopt AI?' but 'what is your unfair advantage when intelligence is no longer scarce?'",
+    },
+    {
+      id: 2,
+      image: "/images/instagram/post2.jpg",
+      url: "https://www.instagram.com/aiceocircle/p/DZ82ltsk1Us/",
+      title: "Dato' Sri Tahir: Leadership Mindset",
+      summary: "Most billionaires don't talk about where they actually started. Tahir does. The gap between that starting point and where he stands today is a series of decisions made by someone who refused to stay defined by circumstances.",
+    },
+    {
+      id: 3,
+      image: "/images/instagram/post3.jpg",
+      url: "https://www.instagram.com/aiceocircle/p/DZ5DGiSk7hk/",
+      title: "Frameworks: Claude vs. Consultants",
+      summary: "Stop paying consultants. Claude does the job for free. Run these 3 consultant-level frameworks before any business decision: Market Gap (SWOT + Blue Ocean), Pricing Strategy, and Customer Insight (Jobs-to-be-Done).",
+    },
+    {
+      id: 4,
+      image: "/images/instagram/post4.jpg",
+      url: "https://www.instagram.com/aiceocircle/p/DZwGphizYlZ/",
+      title: "AI ROI: Why 56% of CEOs Fail",
+      summary: "56% of CEOs invested in AI and got nothing back. PwC surveyed 4,454 CEOs in January 2026. The difference between those who win and those who fail is building a proper foundation rather than treating AI like a tool purchase.",
+    },
+  ],
+};
+
