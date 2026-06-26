@@ -97,7 +97,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-hair border-cream-10 bg-[#070e1c]/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t-[0.5px] border-cream-10 bg-[#070e1c]/95 backdrop-blur-xl md:hidden"
           >
             <Container className="flex flex-col gap-1 py-4">
               {NAV_LINKS.map((l, i) => (

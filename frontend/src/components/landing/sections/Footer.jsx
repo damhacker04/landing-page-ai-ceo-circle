@@ -5,7 +5,7 @@ import { FOOTER, META } from "@/components/landing/data";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 overflow-hidden border-t border-hair border-cream-10 bg-[#060b18]">
+    <footer className="relative z-10 overflow-hidden border-t-[0.5px] border-cream-10 bg-[#060b18]">
       {/* Massive ghost echo title — magma signature */}
       <div className="relative">
         <Reveal y={40}>

@@ -17,8 +17,6 @@ import Faq from "@/components/landing/sections/Faq";
 import VideoSection from "@/components/landing/sections/VideoSection";
 import FinalCta from "@/components/landing/sections/FinalCta";
 import Footer from "@/components/landing/sections/Footer";
-import FixedGrid from "@/components/landing/ui/FixedGrid";
-
 const LandingPage = () => {
   return (
     <LazyMotion features={domAnimation}>
@@ -35,7 +33,6 @@ const LandingPage = () => {
           ].join(", "),
         }}
       />
-      <FixedGrid />
       <Navbar />
       <Hero />
       <PoweredBy />

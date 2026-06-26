@@ -41,7 +41,7 @@ const Program = () => {
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
-                className="group relative border-t border-hair border-cream-10 py-12 last:border-b md:py-16 cursor-pointer overflow-hidden"
+                className="group relative border-t-[0.5px] border-cream-10 py-12 last:border-b-[0.5px] md:py-16 cursor-pointer overflow-hidden"
               >
                 <m.span
                   aria-hidden

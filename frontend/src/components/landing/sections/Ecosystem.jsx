@@ -51,7 +51,7 @@ const Ecosystem = () => {
                     whileHover="hover"
                     initial="rest"
                     animate="rest"
-                    className="group relative cursor-default overflow-hidden border-t border-hair border-cream-10 py-9 last:border-b"
+                    className="group relative cursor-default overflow-hidden border-t-[0.5px] border-cream-10 py-9 last:border-b-[0.5px]"
                   >
                     {/* Bottom lava line */}
                     <m.span
@@ -85,7 +85,7 @@ const Ecosystem = () => {
                             {c.title.split(" ").slice(-1)[0]}
                           </span>
                         </h3>
-                        <p className="mt-3 text-[14px] leading-relaxed text-cream-dim">{c.body}</p>
+                        <p className="mt-3 pr-2 text-[14px] leading-relaxed text-cream-dim">{c.body}</p>
                         <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
                           {c.tag}
                         </span>

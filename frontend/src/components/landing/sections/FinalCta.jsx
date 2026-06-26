@@ -85,7 +85,7 @@ const FinalCta = () => {
         <Reveal delay={0.2}>
           <div className="relative mt-16">
             {!submitted ? (
-              <form onSubmit={onSubmit} noValidate className="grid grid-cols-1 gap-x-12 gap-y-10 border-t border-hair border-cream-10 pt-12 md:grid-cols-2 md:pt-16">
+              <form onSubmit={onSubmit} noValidate className="grid grid-cols-1 gap-x-12 gap-y-10 border-t-[0.5px] border-cream-10 pt-12 md:grid-cols-2 md:pt-16">
                 <Field label="First name" required error={errors.first}>
                   <input required value={form.first} onChange={onChange("first")} onBlur={onBlurField("first")} placeholder="Budi" className="input" />
                 </Field>
@@ -122,7 +122,7 @@ const FinalCta = () => {
                   </div>
                 </Field>
 
-                <div className="md:col-span-2 flex flex-col gap-6 border-t border-hair border-cream-10 pt-8">
+                <div className="md:col-span-2 flex flex-col gap-6 border-t-[0.5px] border-cream-10 pt-8">
                   <label className="flex cursor-pointer items-start gap-3">
                     <input type="checkbox" checked={form.consent} onChange={onChange("consent")} required className="sr-only" />
                     <span className={`mt-0.5 grid h-4 w-4 place-items-center rounded-sm border-hair transition-colors ${form.consent ? "border-[#C9920A] bg-[#C9920A]" : "border-cream-20"}`}>
@@ -140,7 +140,7 @@ const FinalCta = () => {
             ) : (
               <m.div initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-10 border-t border-hair border-cream-10 pt-16 text-center">
+                className="mt-10 border-t-[0.5px] border-cream-10 pt-16 text-center">
                 <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border-hair border-[#C9920A]/40 bg-[#C9920A]/10 text-[#C9920A]">
                   <Check className="h-7 w-7" />
                 </div>

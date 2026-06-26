@@ -41,7 +41,7 @@ const Timeline = () => {
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
-                className="group relative cursor-default overflow-hidden border-t border-hair border-cream-10 py-12 last:border-b md:py-14"
+                className="group relative cursor-default overflow-hidden border-t-[0.5px] border-cream-10 py-12 last:border-b-[0.5px] md:py-14"
               >
                 {/* Lava sweep on hover */}
                 <m.span

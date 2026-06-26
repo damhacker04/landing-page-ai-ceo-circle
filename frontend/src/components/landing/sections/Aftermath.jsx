@@ -48,7 +48,7 @@ const Aftermath = () => {
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
-                className="group relative cursor-pointer overflow-hidden border-t border-hair border-cream-10 py-11 last:border-b md:py-14"
+                className="group relative cursor-pointer overflow-hidden border-t-[0.5px] border-cream-10 py-11 last:border-b-[0.5px] md:py-14"
               >
                 <m.span aria-hidden
                   variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
