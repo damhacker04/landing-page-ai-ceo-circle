@@ -6,7 +6,7 @@ import SectionLabel from "@/components/landing/ui/SectionLabel";
 
 const VideoSection = () => {
   return (
-    <section className="relative z-10 py-10 md:py-14">
+    <section id="video" className="relative z-10 py-10 md:py-14">
       <Container>
         {/* Heading row */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-end">
