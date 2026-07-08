@@ -106,7 +106,7 @@ const Ecosystem = () => {
         <Reveal delay={0.2} className="mt-10">
           <div className="relative overflow-hidden rounded-2xl border border-white/[0.06]">
             <img
-              src="https://picsum.photos/seed/maxy-ai-ecosystem-enterprise/1400/560"
+              src="/images/fullstack-ai-company.png"
               alt="MAXY AI ecosystem — enterprise AI transformation in action"
               className="h-[260px] w-full object-cover md:h-[360px]"
               loading="lazy"
