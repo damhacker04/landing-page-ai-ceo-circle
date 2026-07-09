@@ -33,60 +33,20 @@ const VideoSection = () => {
           </Reveal>
         </div>
 
-        {/* Video placeholder — replace src / add onClick handler with actual embed when ready */}
         <Reveal delay={0.18} className="mt-10">
           <div
-            className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[rgba(8,14,28,0.55)]"
+            className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[rgba(8,14,28,0.55)] shadow-[0_24px_80px_rgba(2,7,18,0.45)]"
             style={{ aspectRatio: "16 / 9" }}
           >
-            <img
-              src="https://picsum.photos/seed/executive-ai-program-maxy/1400/788"
-              alt="AI CEO Circle — program session overview"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              style={{ filter: "saturate(0.6) brightness(0.45)" }}
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/MGlGoB82VEg?si=Zac3MbxJdVNihtCD"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
-            <div
-              aria-hidden
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(7,14,28,0.78) 0%, rgba(31,49,96,0.38) 55%, rgba(201,146,10,0.12) 100%)",
-              }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button
-                aria-label="Play AI CEO Circle program overview"
-                className="group relative flex h-[72px] w-[72px] items-center justify-center rounded-full border border-cream/20 bg-cream/[0.06] backdrop-blur-md transition-all duration-500 hover:scale-105 hover:border-[#C9920A]/50 hover:bg-[#C9920A]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9920A]/50"
-              >
-                <svg
-                  width="18"
-                  height="22"
-                  viewBox="0 0 18 22"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="ml-1 text-cream transition-colors group-hover:text-[#C9920A]"
-                >
-                  <path d="M0.5 1.5L17.5 11L0.5 20.5V1.5Z" />
-                </svg>
-              </button>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-              <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-[#C9920A]">
-                Program Overview
-              </span>
-              <p
-                className="mt-1 font-serif text-[18px] leading-[1.1] text-cream sm:text-[22px]"
-                style={{ letterSpacing: "-0.03em" }}
-              >
-                See AI CEO Circle in action
-              </p>
-            </div>
-            <div className="absolute right-5 top-5 sm:right-7 sm:top-7">
-              <span className="rounded-full border border-cream/15 bg-[#070e1c]/60 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.32em] text-cream-dim backdrop-blur-sm">
-                5 min
-              </span>
-            </div>
           </div>
         </Reveal>
       </Container>
