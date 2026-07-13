@@ -65,20 +65,6 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Languages */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="font-mono text-[10px] uppercase tracking-[0.32em] text-cream-dim">
-              Lang
-            </div>
-            <ul className="mt-5 flex flex-col gap-2.5">
-              <li>
-                <span className="font-serif text-[16px] text-cream">EN</span>
-              </li>
-              <li>
-                <a href="#apply" className="font-serif text-[16px] text-cream-soft hover:text-lava">ID</a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="hairline mt-14" />

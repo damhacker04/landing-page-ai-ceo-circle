@@ -161,8 +161,7 @@ export const TESTIMONIALS = {
   items: [
     {
       initials: "RS",
-      // TODO: replace with Reza's actual photo
-      photo: "https://i.pravatar.cc/80?img=52",
+      photo: "/images/testimony/testimony-1.png",
       name: "Reza S.",
       role: "CEO, Manufacturing · Jakarta",
       quote:
@@ -170,8 +169,7 @@ export const TESTIMONIALS = {
     },
     {
       initials: "AT",
-      // TODO: replace with Andrea's actual photo
-      photo: "https://i.pravatar.cc/80?img=44",
+      photo: "/images/testimony/testimony-2.png",
       name: "Andrea T.",
       role: "Founder, FinTech · Singapore",
       quote:
@@ -179,8 +177,7 @@ export const TESTIMONIALS = {
     },
     {
       initials: "DW",
-      // TODO: replace with Dian's actual photo
-      photo: "https://i.pravatar.cc/80?img=21",
+      photo: "/images/testimony/testimony-3.png",
       name: "Dian W.",
       role: "President Director, Retail · Surabaya",
       quote:
@@ -303,7 +300,7 @@ export const FINAL_CTA = {
 export const FOOTER = {
   contact: [
     { label: "DM", value: "@aiceocircle" },
-    { label: "Email", value: "hello@aiceocircle.com" },
+    { label: "Email", value: "isaac@maxy.asia" },
   ],
   columns: [
     {
@@ -316,7 +313,7 @@ export const FOOTER = {
     },
     {
       title: "Reach",
-      links: ["Jakarta", "Singapore", "hello@aiceocircle.com", "@aiceocircle"],
+      links: ["Jakarta", "Singapore", "isaac@maxy.asia", "@aiceocircle"],
     },
   ],
 };
