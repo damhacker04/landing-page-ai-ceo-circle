@@ -13,7 +13,7 @@ export const META = {
 export const NAV_LINKS = [
   { label: "Ecosystem", href: "#ecosystem" },
   { label: "Program", href: "#program" },
-  { label: "Testimony", href: "#voices" },
+  { label: "Voices", href: "#voices" },
   { label: "Updates", href: "#social" },
   { label: "Qualification", href: "#qualification" },
   { label: "FAQ", href: "#faq" },
@@ -339,7 +339,16 @@ export const FOOTER = {
   columns: [
     {
       title: "Program",
-      links: ["Ecosystem", "Program", "Testimony", "Updates", "Qualification", "FAQ", "Video", "Apply"],
+      links: [
+        "Ecosystem",
+        "Program",
+        "Voices",
+        "Updates",
+        "Qualification",
+        "FAQ",
+        "Video",
+        "Apply",
+      ],
     },
     {
       title: "MAXY AI",
